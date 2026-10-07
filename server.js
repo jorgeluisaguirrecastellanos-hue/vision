@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 const puerto = process.env.PORT || 3000;
 const rutaDatos = path.join(__dirname, 'data', 'evaluaciones.json');
-const rutaWeb = path.join(__dirname, 'vision', 'programa');
+const rutaWeb = __dirname;
 const rutaWebCompilada = path.join(rutaWeb, 'dist');
 
 const datosIniciales = [
