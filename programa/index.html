@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evaluación de Visión</title>
+  <style>
+    *{margin:0; padding:0; box-sizing:border-box; font-family:system-ui, sans-serif;}
+    :root{--primario:#1e40af; --exito:#16a34a; --advertencia:#ca8a04; --peligro:#dc2626; --gris:#f3f4f6;}
+    body{background:#f8fafc; padding:1rem; max-width:1200px; margin:0 auto;}
+    header{text-align:center; margin-bottom:2rem; padding:1rem; background:white; border-radius:12px; box-shadow:0 2px 8px #0001;}
+    .controles{display:grid; gap:0.8rem; margin-bottom:1.5rem;}
+    @media (min-width:640px){.controles{grid-template-columns:1fr 1fr auto; align-items:center;}}
+    input, select, button, form{padding:0.75rem; border:1px solid #ddd; border-radius:8px; font-size:1rem;}
+    button{background:var(--primario); color:white; border:none; cursor:pointer; transition:background .2s;}
+    button:hover{background:#1e3a8a;}
+    .resumen{background:white; padding:1rem; border-radius:10px; margin-bottom:1.5rem; display:grid; gap:0.5rem;}
+    .tarjetas{display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1rem;}
+    article{background:white; padding:1.2rem; border-radius:12px; box-shadow:0 2px 6px #0001; transition:transform .2s;}
+    article:hover{transform:translateY(-3px);}
+    .etiqueta{display:inline-block; padding:0.25rem 0.6rem; border-radius:20px; font-size:0.85rem; font-weight:500; margin:0.3rem 0.3rem 0.3rem 0;}
+    .normal{background:#dcfce7; color:#166534;}
+    .moderada{background:#fef3c7; color:#92400e;}
+    .severa{background:#fee2e2; color:#b91c1c;}
+    .form-nuevo{background:white; padding:1.5rem; border-radius:12px; margin:2rem 0;}
+    .form-nuevo h3{margin-bottom:1rem;}
+    .grupo{margin-bottom:1rem;}
+    label{display:block; margin-bottom:0.3rem; font-weight:500;}
+    .error{color:var(--peligro); font-size:0.85rem; margin-top:0.3rem; min-height:1.2rem;}
+    .acciones{margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;}
+    .btn-fav{background:#f59e0b;}
+    .btn-comp{background:#22c55e;}
+    .fav-activo{background:#d97706;}
+    .comp-activo{background:#15803d;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>👁️ Evaluación de Tipo y Nivel de Visión</h1>
+  <p>Clasificación según criterios OMS</p>
+</header>
+
+<section class="controles">
+  <input type="text" id="buscador" placeholder="🔍 Buscar por nombre..." />
+  <select id="filtroTipo">
+    <option value="todos">Todos los tipos</option>
+    <option value="Normal">Normal</option>
+    <option value="Baja Visión">Baja Visión</option>
+    <option value="Ceguera">Ceguera</option>
+  </select>
+</section>
+
+<section class="resumen">
+  <h3>📊 Resumen</h3>
+  <p>Total: <strong id="total">0</strong></p>
+  <p>Completadas: <strong id="completadas">0</strong> | Pendientes: <strong id="pendientes">0</strong></p>
+  <p>Normal: <strong id="cantNormal">0</strong> | Baja Visión: <strong id="cantBaja">0</strong> | Ceguera: <strong id="cantCiego">0</strong></p>
+</section>
+
+<section class="form-nuevo">
+  <h3>➕ Nueva Evaluación</h3>
+  <form id="formEvaluacion">
+    <div class="grupo">
+      <label>Nombre completo *</label>
+      <input type="text" id="nombre" />
+      <div class="error" id="errNombre"></div>
+    </div>
+    <div class="grupo">
+      <label>Agudeza visual (ej: 20/20) *</label>
+      <input type="text" id="agudeza" placeholder="20/20" />
+      <div class="error" id="errAgudeza"></div>
+    </div>
+    <div class="grupo">
+      <label>Campo visual en grados (0-180) *</label>
+      <input type="number" id="campo" min="0" max="180" />
+      <div class="error" id="errCampo"></div>
+    </div>
+    <button type="submit">Guardar Evaluación</button>
+  </form>
+</section>
+
+<section>
+  <h2>📋 Listado de Evaluaciones</h2>
+  <div id="listaTarjetas" class="tarjetas"></div>
+</section>
+
+<!-- 🔗 Conecta con el código -->
+<script src="./app.js"></script>
+</body>
+</html>
