@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "nombre": "María López",
+    "agudezaVisual": "20/20",
+    "campoVisual": 120,
+    "tipoVision": "Normal",
+    "nivel": "Sin alteración",
+    "favorito": false,
+    "completado": true
+  },
+  {
+    "id": 2,
+    "nombre": "Juan Pérez",
+    "agudezaVisual": "20/80",
+    "campoVisual": 95,
+    "tipoVision": "Baja Visión",
+    "nivel": "Leve",
+    "favorito": true,
+    "completado": true
+  },
+  {
+    "id": 3,
+    "nombre": "Ana García",
+    "agudezaVisual": "20/200",
+    "campoVisual": 60,
+    "tipoVision": "Baja Visión",
+    "nivel": "Moderada",
+    "favorito": false,
+    "completado": false
+  },
+  {
+    "id": 4,
+    "nombre": "Carlos Ruiz",
+    "agudezaVisual": "20/400",
+    "campoVisual": 25,
+    "tipoVision": "Baja Visión",
+    "nivel": "Severa",
+    "favorito": false,
+    "completado": true
+  },
+  {
+    "id": 5,
+    "nombre": "Sofía Méndez",
+    "agudezaVisual": "20/600",
+    "campoVisual": 8,
+    "tipoVision": "Ceguera",
+    "nivel": "Parcial",
+    "favorito": true,
+    "completado": false
+  },
+  {
+    "id": 6,
+    "nombre": "Luis Torres",
+    "agudezaVisual": "20/1000",
+    "campoVisual": 3,
+    "tipoVision": "Ceguera",
+    "nivel": "Casi total",
+    "favorito": false,
+    "completado": true
+  },
+  {
+    "id": 7,
+    "nombre": "Elena Castro",
+    "agudezaVisual": "Sin percepción",
+    "campoVisual": 0,
+    "tipoVision": "Ceguera",
+    "nivel": "Total",
+    "favorito": false,
+    "completado": false
+  },
+  {
+    "id": 8,
+    "nombre": "Pedro Jiménez",
+    "agudezaVisual": "20/50",
+    "campoVisual": 105,
+    "tipoVision": "Normal",
+    "nivel": "Leve disminución",
+    "favorito": false,
+    "completado": true
+  }
+]

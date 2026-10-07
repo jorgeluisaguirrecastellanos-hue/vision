@@ -1,0 +1,24 @@
+{
+  "name": "mi-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "dev:frontend": "vite --config vite.config.mjs",
+    "build:frontend": "vite build --config vite.config.mjs",
+    "preview:frontend": "vite preview --config vite.config.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "vite": "^7.3.7"
+  }
+}
