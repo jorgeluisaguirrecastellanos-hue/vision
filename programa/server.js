@@ -4,7 +4,8 @@ const path = require('path');
 const {
   actualizarEvaluacion,
   crearEvaluacion,
-  listarEvaluaciones
+  listarEvaluaciones,
+  listarTiposVision
 } = require('./evaluaciones-store');
 
 const app = express();
@@ -17,6 +18,10 @@ app.use(express.static(fsSync.existsSync(rutaWebCompilada) ? rutaWebCompilada : 
 
 app.get('/api/evaluaciones', async (req, res, next) => {
   try { res.json(await listarEvaluaciones()); } catch (error) { next(error); }
+});
+
+app.get('/api/enfermedades', async (req, res, next) => {
+  try { res.json(await listarTiposVision()); } catch (error) { next(error); }
 });
 
 app.post('/api/evaluaciones', async (req, res, next) => {

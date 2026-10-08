@@ -88,6 +88,11 @@ async function listarEvaluaciones() {
   return filas.map(mapearEvaluacion);
 }
 
+async function listarTiposVision() {
+  const evaluaciones = await listarEvaluaciones();
+  return [...new Set(evaluaciones.map(evaluacion => evaluacion.tipoVision).filter(Boolean))];
+}
+
 function validarNuevaEvaluacion(datos) {
   if (!datos || typeof datos !== 'object' ||
       typeof datos.nombre !== 'string' || datos.nombre.trim().length < 3 ||
@@ -172,5 +177,6 @@ module.exports = {
   ApiError,
   actualizarEvaluacion,
   crearEvaluacion,
-  listarEvaluaciones
+  listarEvaluaciones,
+  listarTiposVision
 };
