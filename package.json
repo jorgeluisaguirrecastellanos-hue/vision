@@ -4,11 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js",
-    "dev:frontend": "vite --config vite.config.mjs",
-    "build:frontend": "vite build --config vite.config.mjs",
-    "preview:frontend": "vite preview --config vite.config.mjs",
+    "start": "node programa/server.js",
+    "dev": "node --watch programa/server.js",
+    "dev:frontend": "vite --config programa/vite.config.mjs",
+    "build:frontend": "vite build --config programa/vite.config.mjs",
+    "preview:frontend": "vite preview --config programa/vite.config.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
