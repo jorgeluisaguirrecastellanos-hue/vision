@@ -120,8 +120,15 @@ document.getElementById('formEvaluacion').addEventListener('submit', async event
 document.getElementById('buscador').addEventListener('input', renderizar);
 document.getElementById('filtroTipo').addEventListener('change', renderizar);
 
-solicitar(API_URL)
-  .then(datos => { registros = datos; renderizar(); })
-  .catch(error => {
-    document.getElementById('listaTarjetas').textContent = `No se pudieron cargar las evaluaciones: ${error.message}`;
-  });
+async function cargarEvaluaciones() {
+  const lista = document.getElementById('listaTarjetas');
+  lista.textContent = 'Cargando evaluaciones…';
+  try {
+    registros = await solicitar(API_URL);
+    renderizar();
+  } catch (error) {
+    lista.textContent = `No se pudieron cargar las evaluaciones. Comprueba que el servidor esté iniciado y abre la página desde http://localhost:3000. Detalle: ${error.message}`;
+  }
+}
+
+cargarEvaluaciones();
