@@ -127,7 +127,7 @@ async function cargarEvaluaciones() {
     registros = await solicitar(API_URL);
     renderizar();
   } catch (error) {
-    lista.textContent = `No se pudieron cargar las evaluaciones. Comprueba que el servidor esté iniciado y abre la página desde http://localhost:3000. Detalle: ${error.message}`;
+    lista.textContent = `No se pudieron cargar las evaluaciones. Comprueba que la API esté desplegada y configurada correctamente. Detalle: ${error.message}`;
   }
 }
 
